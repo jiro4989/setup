@@ -4,6 +4,7 @@
   file:
     path: "{{ lookup('env', 'HOME') }}/.config"
     state: directory
+
 - name: Install apt packages
   become: true
   apt:
@@ -16,8 +17,30 @@
       - zsh
       - git
       - systemd
+      - snapd
     update_cache: yes
     state: present
+
+# TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
+- name: Install snap packages
+  become: true
+  shell: "snap install {{ item }} --classic"
+  with_items:
+    - conjure-up
+    - minikube
+    - vscode
+    - chromium
+
+# - name: Install snap packages
+#   become: true
+#   snap:
+#     name:
+#       - conjure-up
+#       - minikube
+#       - vscode
+#       - chromium
+#     classic: true
+
 - name: Upgrade pip
   become: true
   ignore_errors: true
@@ -26,6 +49,7 @@
       - pip
     executable: pip3
     state: latest
+
 - name: Install pip modules
   become: true
   ignore_errors: true

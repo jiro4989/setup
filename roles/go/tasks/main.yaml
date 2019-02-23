@@ -47,7 +47,6 @@
     - "github.com/mitchellh/gox"
     - "github.com/mvdan/sh/cmd/shfmt"
     - "github.com/peco/peco/cmd/peco/..."
-    - "github.com/skanehira/docui"
     - "github.com/ChimeraCoder/gojson/gojson"
 
 - name: Download dotfiles
