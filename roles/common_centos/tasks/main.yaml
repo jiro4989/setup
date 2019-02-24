@@ -4,7 +4,7 @@
   become: true
   yum:
     name:
-      - mysql-workbench
+      #- mysql-workbench
       - ruby
       - ibus-mozc
       - python3
