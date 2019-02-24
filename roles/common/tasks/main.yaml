@@ -5,15 +5,17 @@
     path: "{{ lookup('env', 'HOME') }}/.config"
     state: directory
 
+- name: Starting snapd
+  become: true
+  systemd:
+    name: snapd
+    state: started
+
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
 - name: Install snap packages
   become: true
   shell: "snap install {{ item }} --classic"
-  with_items:
-    - conjure-up
-    - minikube
-    - vscode
-    - chromium
+  with_items: - conjure-up - minikube - vscode - chromium
 
 # - name: Install snap packages
 #   become: true
