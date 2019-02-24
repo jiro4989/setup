@@ -4,6 +4,7 @@
   become: true
   yum:
     name:
+      - "https://centos7.iuscommunity.org/ius-release.rpm"
       #- mysql-workbench
       - ruby
       #- ibus-mozc
