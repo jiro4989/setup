@@ -1,0 +1,10 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - common_ubuntu
+    - common
+    - go
+    - docker
+    - vim
+    - shell
+    - git

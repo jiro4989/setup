@@ -1,14 +1,5 @@
 ---
 
-- name: Install vim
-  become: true
-  apt:
-    name:
-      - vim
-      - vim-gnome
-    update_cache: yes
-    state: present
-
 - name: Install neovim
   become: true
   get_url:

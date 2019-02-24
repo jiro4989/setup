@@ -1,0 +1,20 @@
+---
+
+- name: Install apt packages
+  become: true
+  apt:
+    name:
+      - mysql-workbench
+      - ruby
+      - ibus-mozc
+      - python3
+      - python3-pip
+      - zsh
+      - git
+      - systemd
+      - snapd
+      - docker.io
+      - vim
+      - vim-gnome
+    update_cache: yes
+    state: present

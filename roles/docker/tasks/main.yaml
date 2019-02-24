@@ -1,11 +1,5 @@
 ---
 
-- name: Install docker
-  become: true
-  apt:
-    name: docker.io
-    state: latest
-
 - name: Docker group exists
   become: true
   group:
