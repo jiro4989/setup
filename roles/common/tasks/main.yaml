@@ -5,6 +5,15 @@
     path: "{{ lookup('env', 'HOME') }}/.config"
     state: directory
 
+- name: Install minikube
+  become: true
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    dest: /usr/local/bin/minikube
+    mode: 0755
+    owner: root
+    group: root
+
 - name: Starting snapd
   become: true
   systemd:
@@ -17,7 +26,6 @@
   shell: "snap install {{ item }} --classic"
   with_items:
     - conjure-up
-    - minikube
     - vscode
     - chromium
 
