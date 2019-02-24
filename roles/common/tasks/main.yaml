@@ -15,7 +15,11 @@
 - name: Install snap packages
   become: true
   shell: "snap install {{ item }} --classic"
-  with_items: - conjure-up - minikube - vscode - chromium
+  with_items:
+    - conjure-up
+    - minikube
+    - vscode
+    - chromium
 
 # - name: Install snap packages
 #   become: true
