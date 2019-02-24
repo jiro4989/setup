@@ -1,8 +1,8 @@
 ---
 
-- name: Install dnf packages
+- name: Install yum packages
   become: true
-  dnf:
+  yum:
     name:
       - mysql-workbench
       - ruby
