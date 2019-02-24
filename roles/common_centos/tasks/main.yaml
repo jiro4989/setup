@@ -16,6 +16,5 @@
       - snapd
       - docker
       - vim
-      - vim-gnome
     update_cache: yes
     state: present
