@@ -57,3 +57,28 @@
       - python-language-server
     executable: pip3
     state: latest
+
+- name: Mkdir lf src
+  become: true
+  file:
+    path: /usr/local/src/lf/r10
+    state: directory
+    recurse: true
+    mode: 0755
+    owner: root
+    group: root
+
+- name: Install terminal filer
+  become: true
+  get_url:
+    url: "https://github.com/gokcehan/lf/releases/download/r10/lf-linux-amd64.tar.gz"
+    dest: /usr/local/src/lf/r10/lf-linux-amd64.tar.gz
+
+- name: Unarchive lf
+  become: true
+  unarchive:
+    src: /usr/local/src/lf/r10/lf-linux-amd64.tar.gz
+    dest: /usr/local/bin
+    mode: 0755
+    owner: root
+    group: root
