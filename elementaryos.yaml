@@ -21,5 +21,6 @@
     - name: Get VSCode extention list
       get_url:
         url: https://raw.githubusercontent.com/jiro4989/dotfiles/master/code/extensions.txt
+        dest: extensions.txt
     - name: Install VSCode extentions
       shell: "cat extensions.txt | while read -r pkg; do /snap/bin/code --install-extension $pkg; done"
