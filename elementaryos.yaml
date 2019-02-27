@@ -1,9 +1,20 @@
 - hosts: localhost
   connection: local
   tasks:
-    - name: Install pacman
+    - name: Install snap
       become: true
       apt:
         name: snapd
         update_cache: yes
         state: latest
+    - name: Starting snapd
+      become: true
+      systemd:
+        name: snapd
+        state: started
+    - name: Install snap packages
+      become: true
+      shell: "snap install {{ item }} --classic --stable"
+      with_items:
+        - vscode
+        - docker
