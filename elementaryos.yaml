@@ -4,7 +4,9 @@
     - name: Install snap
       become: true
       apt:
-        name: snapd
+        name:
+          - snapd
+          - systemd
         update_cache: yes
         state: latest
     - name: Starting snapd
@@ -18,9 +20,22 @@
       with_items:
         - vscode
         - docker
+        - ruby
     - name: Get VSCode extention list
       get_url:
         url: "https://raw.githubusercontent.com/jiro4989/dotfiles/master/code/extensions.txt"
         dest: /tmp/extensions.txt
     - name: Install VSCode extentions
       shell: "cat /tmp/extensions.txt | while read -r pkg; do /snap/bin/code --install-extension $pkg; done"
+    - name: Starting snapd
+      become: true
+      systemd:
+        name: docker
+        state: started
+    - name: Gem install
+      gem:
+        name:
+          - asciidoctor
+          - asciidoctor-diagram
+          - asciidoctor-pdf
+        state: latest
