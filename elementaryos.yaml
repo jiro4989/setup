@@ -3,7 +3,7 @@
   tasks:
     - name: Install pacman
       become: true
-      pacman:
+      apt:
         name: snapd
         update_cache: yes
         state: latest
