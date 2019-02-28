@@ -22,6 +22,7 @@
         name:
           - snapd
           - systemd
+          - ruby
         update_cache: yes
         state: latest
     - name: Starting snapd
@@ -62,3 +63,4 @@
         name: asciidoctor-pdf
         state: latest
         pre_release: yes
+        executable: /snap/bin/gem
