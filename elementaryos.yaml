@@ -34,9 +34,16 @@
     #     state: started
     - name: Gem install
       gem:
-        name:
-          - asciidoctor
-          - asciidoctor-diagram
-          - asciidoctor-pdf
+        name: asciidoctor
+        state: latest
+
+    - name: Gem install
+      gem:
+        name: asciidoctor-diagram
+        state: latest
+
+    - name: Gem install
+      gem:
+        name: asciidoctor-pdf
         state: latest
         pre_release: yes
