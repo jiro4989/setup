@@ -39,3 +39,4 @@
           - asciidoctor-diagram
           - asciidoctor-pdf
         state: latest
+        pre_release: yes
