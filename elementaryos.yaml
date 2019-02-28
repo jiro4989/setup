@@ -1,6 +1,21 @@
 - hosts: localhost
   connection: local
+  vars:
+    my_git_repo_root: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989"
   tasks:
+    - name: make my source directory
+      file:
+        path: "{{ my_git_repo_root }}"
+        state: directory
+    - name: git clone dotfiles
+      git:
+        repo: "https://github.com/jiro4989/dotfiles"
+        dest: "{{ my_git_repo_root }}/dotfiles"
+    
+    - name: set fact ruby
+      set_fact:
+        ansible_ruby_interpreter: /snap/bin/ruby
+
     - name: Install snap
       become: true
       apt:
