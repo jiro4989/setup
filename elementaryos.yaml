@@ -11,11 +11,6 @@
       git:
         repo: "https://github.com/jiro4989/dotfiles"
         dest: "{{ my_git_repo_root }}/dotfiles"
-    
-    - name: set fact ruby
-      set_fact:
-        ansible_ruby_interpreter: /snap/bin/ruby
-
     - name: Install snap
       become: true
       apt:
@@ -48,6 +43,11 @@
     #   systemd:
     #     name: docker
     #     state: started
+    
+    - name: set fact ruby
+      set_fact:
+        PATH: "/snap/bin:$PATH"
+
     - name: Gem install
       gem:
         name: asciidoctor
