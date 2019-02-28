@@ -1,10 +1,12 @@
 - hosts: localhost
   connection: local
   roles:
-    - common_ubuntu
+    - apt
+    - common_before
     - common
     - go
     - docker
     - vim
     - shell
     - git
+    - vscode

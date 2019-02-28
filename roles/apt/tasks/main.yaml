@@ -1,0 +1,10 @@
+---
+
+- name: Install snap
+  become: true
+  apt:
+    name:
+      - snapd
+      - systemd
+    update_cache: yes
+    state: latest

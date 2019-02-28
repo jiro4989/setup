@@ -1,0 +1,44 @@
+---
+
+- name: Install VSCode
+  become: true
+  shell: "snap install {{ item }} --classic --stable"
+  with_items:
+    - vscode
+    - ruby
+
+############################################################
+# Install extensions
+############################################################
+
+- name: Get VSCode extension list
+  get_url:
+    url: "https://raw.githubusercontent.com/jiro4989/dotfiles/master/code/extensions.txt"
+    dest: /tmp/extensions.txt
+
+- name: Install VSCode extentions
+  shell: "cat /tmp/extensions.txt | while read -r pkg; do /snap/bin/code --install-extension $pkg; done"
+
+- name: set fact ruby
+  set_fact:
+    PATH: "/snap/bin:$PATH"
+
+############################################################
+# Gem for AsciiDoc extensions
+############################################################
+
+- name: Gem install
+  gem:
+    name: asciidoctor
+    state: latest
+
+- name: Gem install
+  gem:
+    name: asciidoctor-diagram
+    state: latest
+
+- name: Gem install
+  gem:
+    name: asciidoctor-pdf
+    state: latest
+    pre_release: yes
