@@ -17,7 +17,6 @@
         name:
           - snapd
           - systemd
-          - ruby
         update_cache: yes
         state: latest
     - name: Starting snapd
