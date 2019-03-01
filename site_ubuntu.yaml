@@ -2,9 +2,9 @@
   connection: local
   roles:
     - apt
-    #- common_before
-    #- common
-    #- go
+    - common_before
+    - common
+    - go
     - docker
     - vim
     - shell
