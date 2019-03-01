@@ -19,6 +19,7 @@
 - name: Create empty zshrc
   file:
     path: "{{ lookup('env', 'HOME') }}/.zshrc"
+    state: file
 
 - name: Add source my zshrc
   lineinfile:
