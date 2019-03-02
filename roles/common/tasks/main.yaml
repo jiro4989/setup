@@ -44,16 +44,6 @@
     update_cache: yes
     state: latest
 
-# - name: Install snap packages
-#   become: true
-#   snap:
-#     name:
-#       - conjure-up
-#       - minikube
-#       - vscode
-#       - chromium
-#     classic: true
-
 - name: Upgrade pip
   become: true
   ignore_errors: true
