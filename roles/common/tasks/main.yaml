@@ -29,7 +29,6 @@
     - vscode
     - chromium
     - ruby
-    - python36-arun
 
 - name: Upgrade pip
   become: true
