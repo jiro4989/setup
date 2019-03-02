@@ -42,7 +42,6 @@
       - git
       - systemd
       - snapd
-      - docker.io
       - vim
       - vim-gnome
     update_cache: yes
