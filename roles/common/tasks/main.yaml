@@ -31,19 +31,6 @@
     - ruby
     - python36
 
-- name: Install apt packages
-  become: true
-  apt:
-    name:
-      - mysql-workbench
-      - ibus-mozc
-      - zsh
-      - git
-      - vim
-      - vim-gnome
-    update_cache: yes
-    state: latest
-
 - name: Upgrade pip
   become: true
   ignore_errors: true
