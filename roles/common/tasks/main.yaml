@@ -39,7 +39,6 @@
       - ibus-mozc
       - zsh
       - git
-      - systemd
       - snapd
       - vim
       - vim-gnome
