@@ -29,6 +29,7 @@
     - vscode
     - chromium
     - ruby
+    - python36
 
 - name: Install apt packages
   become: true
@@ -36,8 +37,6 @@
     name:
       - mysql-workbench
       - ibus-mozc
-      - python3
-      - python3-pip
       - zsh
       - git
       - systemd
