@@ -28,6 +28,25 @@
     - conjure-up
     - vscode
     - chromium
+    - ruby
+
+- name: Install apt packages
+  become: true
+  apt:
+    name:
+      - mysql-workbench
+      - ibus-mozc
+      - python3
+      - python3-pip
+      - zsh
+      - git
+      - systemd
+      - snapd
+      - docker.io
+      - vim
+      - vim-gnome
+    update_cache: yes
+    state: latest
 
 # - name: Install snap packages
 #   become: true

@@ -1,10 +1,25 @@
 ---
 
+- name: make my source directory
+  file:
+    path: "{{ my_git_repo_root }}"
+    state: directory
+
+- name: git clone dotfiles
+  git:
+    repo: "https://github.com/jiro4989/dotfiles"
+    dest: "{{ my_git_repo_root }}/dotfiles"
+
 - name: Add source my bashrc
   lineinfile:
     dest: "{{ lookup('env', 'HOME') }}/.bashrc"
     state: present
     line: source $HOME/src/github.com/jiro4989/dotfiles/bash/bashrc
+
+- name: Create empty zshrc
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.zshrc"
+    state: touch
 
 - name: Add source my zshrc
   lineinfile:

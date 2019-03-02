@@ -1,5 +1,11 @@
 ---
 
+- name: Install docker
+  become: true
+  shell: "snap install {{ item }} --classic --stable"
+  with_items:
+    - docker
+
 - name: Docker group exists
   become: true
   group:
@@ -13,20 +19,3 @@
     state: present
     groups: docker
     append: yes
-
-- name: Docker daemon status is started
-  become: true
-  systemd:
-    name: docker
-    state: started
-
-- name: Set variable OS target
-  shell: echo $((uanme -s))-$((uname -m))
-  register: os
-  changed_when: no
-
-- name: Install docker-compose
-  get_url:
-    url: "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-{{ os }}"
-    dest: /usr/local/bin/docker-compose
-    mode: 0755
