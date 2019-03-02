@@ -22,17 +22,17 @@
 # Gem for AsciiDoc extensions
 ############################################################
 
-- name: Gem install
+- name: Gem install asciidoctor
   gem:
     name: asciidoctor
     state: latest
 
-- name: Gem install
+- name: Gem install asciidoctor-diagram
   gem:
     name: asciidoctor-diagram
     state: latest
 
-- name: Gem install
+- name: Gem install asciidoctor-pdf
   gem:
     name: asciidoctor-pdf
     state: latest
