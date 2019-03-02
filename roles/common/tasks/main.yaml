@@ -26,9 +26,7 @@
   shell: "snap install {{ item }} --classic"
   with_items:
     - conjure-up
-    - vscode
     - chromium
-    - ruby
 
 - name: Upgrade pip
   become: true
