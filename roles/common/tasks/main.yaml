@@ -39,7 +39,6 @@
       - ibus-mozc
       - zsh
       - git
-      - snapd
       - vim
       - vim-gnome
     update_cache: yes
