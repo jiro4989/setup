@@ -27,6 +27,7 @@
   with_items:
     - conjure-up
     - chromium
+    - hub
 
 - name: Upgrade pip
   become: true
