@@ -16,5 +16,7 @@
       - docker.io
       - vim
       - vim-gnome
+      - node
     update_cache: yes
-    state: present
+    state: latest
+

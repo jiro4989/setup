@@ -27,6 +27,7 @@
 
 - name: Install golang modules
   shell: "GOPATH={{ GOPATH }} GO111MODULE=off go get -u {{ item }}"
+  ignore_errors: true
   with_items:
     - "github.com/motemen/ghq"
     - "github.com/fatih/color"

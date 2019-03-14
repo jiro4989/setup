@@ -29,6 +29,10 @@
     - chromium
     - hub
 
+- name: Install CSS language server
+  become: true
+  shell: "npm install -g vscode-css-languageserver-bin"
+
 - name: Upgrade pip
   become: true
   ignore_errors: true
