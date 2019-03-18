@@ -25,5 +25,6 @@ Ansible version
 以下のコマンドを実行する
 
 ```
-ansible-playbook site_ubuntu.yaml --ask-become-pass
+./dependencies.sh
+ansible-playbook site_ubuntu.yaml -K
 ```
