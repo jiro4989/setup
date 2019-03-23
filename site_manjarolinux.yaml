@@ -1,0 +1,12 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - pacman
+    - common_before
+    - common
+    - git
+    - go
+    - docker
+    - vim
+    - shell
+      #- vscode

@@ -25,9 +25,16 @@
   become: true
   shell: "snap install {{ item }} --classic"
   with_items:
-    - conjure-up
+          #- conjure-up
     - chromium
-    - hub
+      #- hub
+
+# TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
+- name: Install snap packages
+  become: true
+  shell: "snap install {{ item }}"
+  with_items:
+    - pulseaudio
 
 - name: Install CSS language server
   become: true

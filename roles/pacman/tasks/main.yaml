@@ -1,0 +1,24 @@
+---
+
+- name: Install snap packages
+  become: true
+  pacman:
+    name:
+      - snapd
+      - systemd
+      - mysql-workbench
+      - fcitx
+      - fcitx-mozc
+      - fcitx-configtool
+      - zsh
+      - git
+      - vim
+      - nodejs
+      - npm
+      - pulseaudio
+      - krita
+      - steam
+        # ERROR: occured conflicting dependencies...
+        #- gvim
+    update_cache: yes
+    state: latest
