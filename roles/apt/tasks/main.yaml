@@ -7,6 +7,11 @@
       - snapd
       - systemd
       - mysql-workbench
+      - curl
+      - guake
+      - fcitx
+      - fcitx-mozc
+      - fcitx-config-common
       - ibus-mozc
       - zsh
       - git
