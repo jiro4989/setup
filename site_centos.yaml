@@ -3,8 +3,8 @@
   roles:
     - common_centos
     - common
+    - git
     - go
     - docker
     - vim
     - shell
-    - git

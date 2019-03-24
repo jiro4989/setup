@@ -4,9 +4,9 @@
     - apt
     - common_before
     - common
+    - git
     - go
     - docker
     - vim
     - shell
-    - git
     - vscode

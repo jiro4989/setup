@@ -12,5 +12,12 @@
       - git
       - vim
       - vim-gnome
+      - nodejs
+      - npm
+      - ruby
+      - gem
+      - krita
+      - kazam
+      - steam
     update_cache: yes
     state: latest
