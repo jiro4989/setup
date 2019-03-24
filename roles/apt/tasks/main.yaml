@@ -19,10 +19,12 @@
       - vim-gnome
       - nodejs
       - npm
+      - python3
       - ruby
       - gem
       - krita
       - kazam
       - steam
+      - tig
     update_cache: yes
     state: latest

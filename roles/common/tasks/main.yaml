@@ -27,7 +27,7 @@
   with_items:
           #- conjure-up
     - chromium
-      #- hub
+    - hub
 
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
 - name: Install snap packages
