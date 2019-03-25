@@ -1,0 +1,7 @@
+---
+
+- name: Create link of urxvt config file
+  file:
+    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/urxvt/.Xdefaults"
+    dest: "{{ lookup('env', 'HOME') }}/.Xdefaults"
+    state: link

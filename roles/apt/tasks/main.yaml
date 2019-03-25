@@ -26,5 +26,6 @@
       - kazam
       - steam
       - tig
+      - rxvt-unicode
     update_cache: yes
     state: latest
