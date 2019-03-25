@@ -5,3 +5,14 @@
     src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/urxvt/.Xdefaults"
     dest: "{{ lookup('env', 'HOME') }}/.Xdefaults"
     state: link
+
+- name: Get PowerLine fonts
+  git:
+    repo: "https://github.com/powerline/fonts"
+    dest: /tmp/fonts
+
+- name: Copy fonts
+  become: true
+  copy:
+    src: /tmp/fonts/SourceCodePro
+    dest: /usr/share/fonts/SourceCodePro
