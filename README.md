@@ -25,6 +25,5 @@ Ansible version
 以下のコマンドを実行する
 
 ```
-./dependencies.sh
-ansible-playbook site_ubuntu.yaml -K
+./setup.sh
 ```
