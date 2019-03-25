@@ -27,5 +27,6 @@
       - steam
       - tig
       - rxvt-unicode
+      - i3
     update_cache: yes
     state: latest
