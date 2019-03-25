@@ -1,5 +1,8 @@
 ---
 
+- name: Change user dirs language, Japanese to English
+  shell: "LANG=C xdg-user-dirs-gtk-update"
+
 - name: Make config directory
   file:
     path: "{{ lookup('env', 'HOME') }}/.config"
@@ -83,3 +86,4 @@
     mode: 0755
     owner: root
     group: root
+
