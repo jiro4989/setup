@@ -16,3 +16,12 @@
   copy:
     src: /tmp/fonts/SourceCodePro
     dest: /usr/share/fonts/SourceCodePro
+
+- name: Clone PowerLine Shell
+  git:
+    repo: "https://github.com/milkbikis/powerline-shell"
+    dest: /tmp/powerline-shell
+
+- name: Run install.py
+  become: true
+  shell: "(cd /tmp/powerline-shell/ && python setup.py install)"
