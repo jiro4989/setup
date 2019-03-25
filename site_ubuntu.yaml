@@ -2,7 +2,6 @@
   connection: local
   roles:
     - apt
-    - common_before
     - common
     - git
     - go
