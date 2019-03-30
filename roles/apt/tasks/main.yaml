@@ -29,5 +29,6 @@
       - rxvt-unicode
       - i3
       - volumeicon-alsa
+      - xclip
     update_cache: yes
     state: latest
