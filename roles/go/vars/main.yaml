@@ -2,7 +2,7 @@
 
 GOPATH: "{{ lookup('env', 'HOME') }}"
 base_dir: /usr/local
-go_version: go1.11
+go_version: go1.12
 
 download_file: "{{ go_version }}.linux-amd64.tar.gz"
 download_url: "https://dl.google.com/go/{{ download_file }}"
