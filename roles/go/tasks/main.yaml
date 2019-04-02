@@ -40,7 +40,7 @@
     - "github.com/mvdan/sh/cmd/shfmt"
     - "github.com/peco/peco/cmd/peco/..."
     - "github.com/ChimeraCoder/gojson/gojson"
-    - "github.com/saibing/bingo"
+    - "golang.org/x/tools/cmd/gopls"
 
 - name: Download dotfiles
   shell: "{{ GOPATH }}/bin/ghq get jiro4989/dotfiles"
