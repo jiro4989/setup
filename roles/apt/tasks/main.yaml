@@ -9,6 +9,7 @@
       - mysql-workbench
       - curl
       - guake
+      - terminator
       - fcitx
       - fcitx-mozc
       - fcitx-config-common
