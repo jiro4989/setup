@@ -4,7 +4,7 @@
   become: true
   shell: "snap install {{ item }} --classic --stable"
   with_items:
-    - vscode
+    - code
     - ruby
 
 ############################################################
