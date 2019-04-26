@@ -38,6 +38,7 @@
   shell: "snap install {{ item }}"
   with_items:
     - pulseaudio
+    - foobar2000
 
 - name: Install CSS language server
   become: true
