@@ -31,5 +31,6 @@
       - i3
       - volumeicon-alsa
       - xclip
+      - unar
     update_cache: yes
     state: latest
