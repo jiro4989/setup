@@ -41,6 +41,7 @@
     - "github.com/peco/peco/cmd/peco/..."
     - "github.com/ChimeraCoder/gojson/gojson"
     - "golang.org/x/tools/cmd/gopls"
+    - "github.com/mattn/twty"
 
 - name: Download dotfiles
   shell: "{{ GOPATH }}/bin/ghq get jiro4989/dotfiles"
