@@ -32,5 +32,6 @@
       - volumeicon-alsa
       - xclip
       - unar
+      - fonts-ricty-diminished
     update_cache: yes
     state: latest
