@@ -33,5 +33,6 @@
       - xclip
       - unar
       - fonts-ricty-diminished
+      - screenfetch
     update_cache: yes
     state: latest
