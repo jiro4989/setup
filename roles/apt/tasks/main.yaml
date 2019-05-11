@@ -10,6 +10,7 @@
       - curl
       - guake
       - terminator
+      - tilix
       - fcitx
       - fcitx-mozc
       - fcitx-config-common
