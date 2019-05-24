@@ -27,3 +27,9 @@ Ansible version
 ```
 ./setup.sh
 ```
+
+## フォント
+
+- HackGen
+- https://qiita.com/tawara_/items/374f3ca0a386fab8b305
+
