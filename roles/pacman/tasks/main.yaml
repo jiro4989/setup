@@ -23,7 +23,8 @@
       - glibc
       - nim
       - snapper
-      - pacman
+      - noto-fonts-emoji
+      - noto-fonts-extra
         # ERROR: occured conflicting dependencies...
         #- gvim
     update_cache: yes
