@@ -1,8 +1,15 @@
 ---
 
+- name: Get latest font file information
+  uri:
+    url: "https://api.github.com/repos/yuru7/HackGen/releases/latest"
+    return_content: true
+    body_format: json
+  register: response
+
 - name: Download font file and unarchive
   unarchive:
-    src: "https://github.com/yuru7/HackGen/releases/download/{{ hackgen_version }}/HackGen_{{ hackgen_version }}.zip"
+    src: "{{ response.json.assets[0].browser_download_url }}"
     dest: "/tmp"
     remote_src: yes
 
