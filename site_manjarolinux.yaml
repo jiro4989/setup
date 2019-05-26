@@ -8,6 +8,6 @@
     - docker
     - vim
     - shell
+    - i3
+    - terminal
       #- vscode
-      #- i3
-      #- terminal

@@ -15,10 +15,11 @@
       - vim
       - nodejs
       - npm
-        #- pulseaudio
+      - pulseaudio
       - krita
       - steam
       - tig
+      - nim
         # ERROR: occured conflicting dependencies...
         #- gvim
     update_cache: yes

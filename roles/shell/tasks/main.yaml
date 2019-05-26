@@ -9,6 +9,7 @@
   git:
     repo: "https://github.com/jiro4989/dotfiles"
     dest: "{{ my_git_repo_root }}/dotfiles"
+  ignore_errors: true
 
 - name: Add source my bashrc
   lineinfile:
