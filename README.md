@@ -96,3 +96,19 @@ zsh
 zsh
 -> y
 
+# Chromiumで音が出ない
+
+pacmanタスクでpulseaudioとpavucontrolをインストールするようにしている。
+setup後に`pavucontrol`コマンドを実行して音声出力をいじると音がなるようになった。
+
+# フォントを調べる
+
+% fc-list : family | grep HackGen
+
+# git push時にパスワードを聞かれないようにする
+
+- SSH鍵の生成 
+  `ssh-keygen -t rsa -b 4096 -C "your@email"`
+- GitHubに公開鍵(id_rsa.pub)を登録
+- Git cloneするときにsshでcloneする
+  あとからsshに変更する際はスクリプトを使う
