@@ -37,7 +37,7 @@ Ansible version
 
 不定期にOSを再インストールするときにやること。
 
-### OSイメージを焼く
+### USBにOSイメージを焼く
 
 USBにOSイメージを焼くためにUSBのデバイス名を調べる。
 
@@ -62,3 +62,4 @@ sudo dd if={ISOファイル名}.iso of=/dev/{デバイス名} bs=16MB
 # sdbのとき
 sudo dd if={ISOファイル名}.iso of=/dev/sdb bs=16MB
 ```
+
