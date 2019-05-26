@@ -26,3 +26,7 @@
     dest: "{{ lookup('env', 'HOME') }}/.zshrc"
     state: present
     line: source $HOME/src/github.com/jiro4989/dotfiles/zsh/zshrc
+
+- name: Change shell to zsh
+  become: true
+  shell: "chsh -s /usr/bin/zsh"

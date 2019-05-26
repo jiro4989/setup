@@ -3,4 +3,4 @@
 set -eu
 
 ./deps.sh
-ansible-playbook site_ubuntu.yaml -K
+ansible-playbook site_manjarolinux.yaml -K

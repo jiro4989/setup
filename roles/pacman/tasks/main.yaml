@@ -6,7 +6,7 @@
     name:
       - snapd
       - systemd
-      - mysql-workbench
+        #- mysql-workbench
       - fcitx
       - fcitx-mozc
       - fcitx-configtool
@@ -15,9 +15,10 @@
       - vim
       - nodejs
       - npm
-      - pulseaudio
+        #- pulseaudio
       - krita
       - steam
+      - tig
         # ERROR: occured conflicting dependencies...
         #- gvim
     update_cache: yes

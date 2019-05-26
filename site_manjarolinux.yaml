@@ -2,7 +2,6 @@
   connection: local
   roles:
     - pacman
-    - common_before
     - common
     - git
     - go
@@ -10,3 +9,5 @@
     - vim
     - shell
       #- vscode
+      #- i3
+      #- terminal

@@ -43,5 +43,13 @@
     - "golang.org/x/tools/cmd/gopls"
     - "github.com/mattn/twty"
 
-- name: Download dotfiles
-  shell: "{{ GOPATH }}/bin/ghq get jiro4989/dotfiles"
+- name: ghq get jiro4989 repositories
+  shell: "{{ GOPATH }}/bin/ghq get jiro4989/{{ item }}"
+  with_items:
+    - "dotfiles"
+    - "setup"
+    - "workspace"
+    - "text-proofreading"
+    - "textimg"
+    - "super_unko"
+  ignore_errors: true

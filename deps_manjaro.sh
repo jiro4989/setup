@@ -7,9 +7,10 @@ set -eu
 sudo pacman-mirrors -f 0
 
 # https://qiita.com/MoriokaReimen/items/dbe1448ce6c0f80a6ac1
+# apt update
 # sync repository
 sudo pacman -Syy
 # search software
 pacman -Ss ansible
 # install
-pacman -S --noconfirm ansible
+sudo pacman -S --noconfirm ansible

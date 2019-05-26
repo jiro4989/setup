@@ -1,7 +1,7 @@
 ---
 
-- name: Change user dirs language, Japanese to English
-  shell: "LANG=C xdg-user-dirs-gtk-update"
+#- name: Change user dirs language, Japanese to English
+#  shell: "LANG=C xdg-user-dirs-gtk-update"
 
 - name: Make config directory
   file:
@@ -23,8 +23,15 @@
     name: snapd
     state: started
 
+- name: Create /snap link
+  become: true
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
+
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
-- name: Install snap packages
+- name: Install snap packages (need too long time)
   become: true
   shell: "snap install {{ item }} --classic"
   with_items:
@@ -33,16 +40,18 @@
     - hub
 
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
-- name: Install snap packages
+- name: Install foobar2000 (need too long time)
   become: true
   shell: "snap install {{ item }}"
   with_items:
-    - pulseaudio
+          #- pulseaudio
     - foobar2000
 
-- name: Install CSS language server
-  become: true
-  shell: "npm install -g vscode-css-languageserver-bin"
+      #- name: Install CSS language server
+      #  become: true
+      #  npm:
+      #    name: vscode-css-languageserver-bin
+      #    global: yes
 
 - name: Upgrade pip
   become: true

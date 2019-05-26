@@ -63,3 +63,36 @@ sudo dd if={ISOファイル名}.iso of=/dev/{デバイス名} bs=16MB
 sudo dd if={ISOファイル名}.iso of=/dev/sdb bs=16MB
 ```
 
+# Display setting
+
+```
+xrandr -> Show display information
+arandr -> Graphical display settings
+PCmanFM -> File manager
+```
+/etc/sudoers (visudo)
+Defaults timestamp_timeout = 600
+
+# Bluetooth USB
+
+bluetoothctl
+power on
+devices
+scan on
+devices
+connect {MAC}
+
+http://note.kurodigi.com/post-0-12/
+
+# Vim setup
+
+vim
+:PlugInstall
+
+# zsh
+
+zsh
+-> y
+zsh
+-> y
+
