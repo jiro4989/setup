@@ -16,10 +16,14 @@
       - nodejs
       - npm
       - pulseaudio
+      - pavucontrol
       - krita
       - steam
       - tig
+      - glibc
       - nim
+      - snapper
+      - pacman
         # ERROR: occured conflicting dependencies...
         #- gvim
     update_cache: yes

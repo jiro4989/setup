@@ -97,3 +97,27 @@
     owner: root
     group: root
 
+- name: Starting Bluetooth
+  become: true
+  systemd:
+    name: bluetooth
+    state: started
+
+- name: Bluetooth auto enable
+  become: true
+  lineinfile:
+    dest: /etc/bluetooth/main.conf
+    state: present
+    line: AutoEnable=true
+
+- name: Fcitx .profile
+  become: true
+  blockinfile:
+    dest:  "{{ lookup('env', 'HOME') }}/.profile"
+    state: present
+    content: |
+      export DefaultImModule=fcitx
+      export GTK_IM_MODULE=fcitx
+      export QT_IM_MODULE=fcitx
+      export XMODIFIERS="@im=fcitx"
+
