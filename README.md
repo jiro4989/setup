@@ -33,3 +33,32 @@ Ansible version
 - HackGen
 - https://qiita.com/tawara_/items/374f3ca0a386fab8b305
 
+## OSの再インストール
+
+不定期にOSを再インストールするときにやること。
+
+### OSイメージを焼く
+
+USBにOSイメージを焼くためにUSBのデバイス名を調べる。
+
+```bash
+sudo fdisk -l | grep /dev/sd
+```
+
+USBを初期化するときは以下のコマンド(結構時間がかかる)
+
+```bash
+sudo dd if=/dev/zero of=/dev/{デバイス名} bs=16MB
+
+# sdbの時
+sudo dd if=/dev/zero of=/dev/sdb bs=16MB
+```
+
+USBにISOをやく(結構時間がかかる)
+
+```bash
+sudo dd if={ISOファイル名}.iso of=/dev/{デバイス名} bs=16MB
+
+# sdbのとき
+sudo dd if={ISOファイル名}.iso of=/dev/sdb bs=16MB
+```
