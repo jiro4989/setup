@@ -3,6 +3,31 @@
 #- name: Change user dirs language, Japanese to English
 #  shell: "LANG=C xdg-user-dirs-gtk-update"
 
+- name: Delete user-dirs.dirs
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.config/user-dirs.dirs"
+    state: absent
+
+- name: Create link user-dirs.dirs
+  file:
+    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/user-dirs.dirs"
+    dest: "{{ lookup('env', 'HOME') }}/.config/user-dirs.dirs"
+    state: link
+
+- name: Make user directories
+  file:
+    path: "{{ lookup('env', 'HOME') }}/{{ item }}"
+    state: directory
+  with_items:
+    - desktop
+    - download
+    - template
+    - public
+    - document
+    - music
+    - picture
+    - video
+
 - name: Make config directory
   file:
     path: "{{ lookup('env', 'HOME') }}/.config"
