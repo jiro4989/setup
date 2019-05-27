@@ -1,7 +1,0 @@
-hub
-vim config de src nothing
-ghq get github.com/jiro4989/dotfiles
-ghq -> .ghq/src
-exist ~/.vim
-chrome no sound, but palemoon ok
-bluetooth mouse not running
