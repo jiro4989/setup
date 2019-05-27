@@ -22,6 +22,7 @@
       - tig
       - glibc
       - nim
+      - nimble
       - snapper
       - noto-fonts-emoji
       - noto-fonts-extra

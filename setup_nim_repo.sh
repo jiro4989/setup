@@ -8,8 +8,10 @@ type ghq >/dev/null 2>&1 || {
 time (
   ghq get Nim
   ghq get nim-lang/Nim
-  
-  cd $(ghq list | grep -E "$USER/Nim$")
+
+  set -eu
+
+  cd $HOME/src/$(ghq list | grep -E "$USER/Nim$")
   bash build_all.sh
   ./koch tests
 )
