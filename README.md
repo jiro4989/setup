@@ -28,10 +28,11 @@ Ansible version
 ./setup.sh
 ```
 
-## フォント
+AnsiblePlaybookのみ実行したい場合は下記
 
-- HackGen
-- https://qiita.com/tawara_/items/374f3ca0a386fab8b305
+```
+./setup.sh p
+```
 
 ## OSの再インストール
 
@@ -63,47 +64,54 @@ sudo dd if={ISOファイル名}.iso of=/dev/{デバイス名} bs=16MB
 sudo dd if={ISOファイル名}.iso of=/dev/sdb bs=16MB
 ```
 
-# Display setting
+# 外部モニター設定
 
-```
-xrandr -> Show display information
-arandr -> Graphical display settings
-PCmanFM -> File manager
-```
-/etc/sudoers (visudo)
-Defaults timestamp_timeout = 600
+xrandrかarandrを使う。
+
+- xrandr コマンドでディスプレイを操作する
+- arandr GUIでディスプレイを操作する
+
+# ファイルマネージャー
+
+ManjaroLinuxにはpcmanfmがインストールされているのでそれを使う。
+i3wmではmod+F3で呼び出せる。
 
 # Bluetooth USB
 
+Playbookで自動でBluetoothマウスと接続するようにしたはずだけれど、
+一応手動でのオペレーションをする場合は以下の手順を踏む。
+
+```
 bluetoothctl
 power on
 devices
 scan on
-devices
 connect {MAC}
+```
 
 http://note.kurodigi.com/post-0-12/
 
-# Vim setup
+# Vimのプラグインのインストール
 
-vim
-:PlugInstall
+vimを起動して以下のコマンドを実行する。
 
-# zsh
+- `:PlugInstall`
+- `:GoInstallBinaries`
 
-zsh
--> y
-zsh
--> y
+# zshのセットアップ
+
+zshを実行して yes yes
 
 # Chromiumで音が出ない
 
 pacmanタスクでpulseaudioとpavucontrolをインストールするようにしている。
 setup後に`pavucontrol`コマンドを実行して音声出力をいじると音がなるようになった。
 
-# フォントを調べる
+# フォント名を調べる
 
-% fc-list : family | grep HackGen
+```bash
+fc-list : family | grep HackGen
+```
 
 # git push時にパスワードを聞かれないようにする
 
@@ -111,4 +119,5 @@ setup後に`pavucontrol`コマンドを実行して音声出力をいじると�
   `ssh-keygen -t rsa -b 4096 -C "your@email"`
 - GitHubに公開鍵(id_rsa.pub)を登録
 - Git cloneするときにsshでcloneする
-  あとからsshに変更する際はスクリプトを使う
+  あとからsshに変更する際はスクリプトを使う。
+  - jiro4989/bin/bin/git-ssh-set-url.sh
