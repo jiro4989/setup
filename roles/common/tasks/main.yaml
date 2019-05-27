@@ -92,7 +92,7 @@
   ignore_errors: true
   pip:
     name:
-      - pynvim
+      #- pynvim
       - python-language-server
     executable: pip3
     state: latest
