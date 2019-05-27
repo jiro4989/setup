@@ -25,6 +25,8 @@
       - noto-fonts-emoji
       - noto-fonts-extra
       - wine
+      - code
+      - ruby
         # ERROR: occured conflicting dependencies...
         #- gvim
     update_cache: yes

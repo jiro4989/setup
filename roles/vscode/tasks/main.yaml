@@ -1,18 +1,18 @@
 ---
 
-- name: Install VSCode
-  become: true
-  shell: "snap install {{ item }} --classic --stable"
-  with_items:
-    - code
-    - ruby
+# - name: Install VSCode
+#   become: true
+#   shell: "snap install {{ item }} --classic --stable"
+#   with_items:
+#     - code
+#     - ruby
 
 ############################################################
 # Install extensions
 ############################################################
 
 - name: Install VSCode extentions
-  shell: "cat {{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/code/extensions.txt | while read -r pkg; do /snap/bin/code --install-extension $pkg; done"
+  shell: "cat {{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/code/extensions.txt | while read -r pkg; do code --install-extension $pkg; done"
 
 - name: set fact ruby
   set_fact:
