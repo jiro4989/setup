@@ -12,7 +12,7 @@
       - fcitx-configtool
       - zsh
       - git
-      - vim
+      - gvim
       - nodejs
       - npm
       - pulseaudio
@@ -27,7 +27,5 @@
       - wine
       - code
       - ruby
-        # ERROR: occured conflicting dependencies...
-        #- gvim
     update_cache: yes
     state: latest
