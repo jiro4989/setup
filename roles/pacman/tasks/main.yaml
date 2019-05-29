@@ -27,5 +27,6 @@
       - wine
       - code
       - ruby
+      - docker
     update_cache: yes
     state: latest
