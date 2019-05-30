@@ -113,6 +113,12 @@ setup後に`pavucontrol`コマンドを実行して音声出力をいじると�
 fc-list : family | grep HackGen
 ```
 
+ベースになるフォントを調べる？
+
+```bash
+xrdb -query | grep font
+```
+
 # git push時にパスワードを聞かれないようにする
 
 - SSH鍵の生成 
@@ -121,3 +127,12 @@ fc-list : family | grep HackGen
 - Git cloneするときにsshでcloneする
   あとからsshに変更する際はスクリプトを使う。
   - jiro4989/bin/bin/git-ssh-set-url.sh
+
+# トラブルシュート
+
+## フォントが変わらない
+
+urxvtのフォントが変更されなかった。
+Boldフォントの方だけ反映されるという問題に直面した。
+
+結論：$HOME/.Xresource内のフォント設定をコメントアウトしてOSを再起動したら解決した。
