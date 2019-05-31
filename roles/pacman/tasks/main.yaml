@@ -28,5 +28,6 @@
       - code
       - ruby
       - docker
+      - docker-compose
     update_cache: yes
     state: latest
