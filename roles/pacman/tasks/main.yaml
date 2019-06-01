@@ -29,5 +29,6 @@
       - ruby
       - docker
       - docker-compose
+      - noto-fonts-cjk
     update_cache: yes
     state: latest
