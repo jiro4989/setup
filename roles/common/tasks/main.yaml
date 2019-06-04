@@ -72,12 +72,6 @@
           #- pulseaudio
     - foobar2000
 
-      #- name: Install CSS language server
-      #  become: true
-      #  npm:
-      #    name: vscode-css-languageserver-bin
-      #    global: yes
-
 - name: Upgrade pip
   become: true
   ignore_errors: true

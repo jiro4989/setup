@@ -3,6 +3,7 @@
   roles:
     - pacman
     - common
+    - nodejs
     - git
     - go
     - docker
