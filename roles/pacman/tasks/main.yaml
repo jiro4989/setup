@@ -32,5 +32,6 @@
       - noto-fonts-cjk
       - dnsutils
       - tmux
+      - xf86-input-wacom
     update_cache: yes
     state: latest
