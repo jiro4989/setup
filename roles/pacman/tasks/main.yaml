@@ -33,5 +33,6 @@
       - dnsutils
       - tmux
       - xf86-input-wacom
+      - winetricks
     update_cache: yes
     state: latest
