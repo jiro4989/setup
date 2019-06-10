@@ -35,5 +35,6 @@
       - xf86-input-wacom
       - winetricks
       - lutris
+      - zip
     update_cache: yes
     state: latest
