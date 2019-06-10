@@ -34,5 +34,6 @@
       - tmux
       - xf86-input-wacom
       - winetricks
+      - lutris
     update_cache: yes
     state: latest
