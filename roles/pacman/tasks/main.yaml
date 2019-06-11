@@ -36,5 +36,6 @@
       - winetricks
       - lutris
       - zip
+      - lmms
     update_cache: yes
     state: latest
