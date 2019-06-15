@@ -36,5 +36,6 @@
       - chromium-browser
       - chromium-browser-l10n
       - g++
+      - tmux
     update_cache: yes
     state: latest
