@@ -33,5 +33,8 @@
       - unar
       - fonts-ricty-diminished
       - screenfetch
+      - chromium-browser
+      - chromium-browser-l10n
+      - g++
     update_cache: yes
     state: latest

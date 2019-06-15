@@ -3,30 +3,30 @@
 #- name: Change user dirs language, Japanese to English
 #  shell: "LANG=C xdg-user-dirs-gtk-update"
 
-- name: Delete user-dirs.dirs
-  file:
-    path: "{{ lookup('env', 'HOME') }}/.config/user-dirs.dirs"
-    state: absent
-
-- name: Create link user-dirs.dirs
-  file:
-    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/user-dirs.dirs"
-    dest: "{{ lookup('env', 'HOME') }}/.config/user-dirs.dirs"
-    state: link
-
-- name: Make user directories
-  file:
-    path: "{{ lookup('env', 'HOME') }}/{{ item }}"
-    state: directory
-  with_items:
-    - desktop
-    - download
-    - template
-    - public
-    - document
-    - music
-    - picture
-    - video
+# - name: Delete user-dirs.dirs
+#   file:
+#     path: "{{ lookup('env', 'HOME') }}/.config/user-dirs.dirs"
+#     state: absent
+# 
+# - name: Create link user-dirs.dirs
+#   file:
+#     src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/user-dirs.dirs"
+#     dest: "{{ lookup('env', 'HOME') }}/.config/user-dirs.dirs"
+#     state: link
+#
+# - name: Make user directories
+#   file:
+#     path: "{{ lookup('env', 'HOME') }}/{{ item }}"
+#     state: directory
+#   with_items:
+#     - desktop
+#     - download
+#     - template
+#     - public
+#     - document
+#     - music
+#     - picture
+#     - video
 
 - name: Make config directory
   file:
@@ -48,12 +48,12 @@
     name: snapd
     state: started
 
-- name: Create /snap link
-  become: true
-  file:
-    src: /var/lib/snapd/snap
-    dest: /snap
-    state: link
+    # - name: Create /snap link
+    #   become: true
+    #   file:
+    #     src: /var/lib/snapd/snap
+    #     dest: /snap
+    #     state: link
 
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
 - name: Install snap packages (need too long time)
@@ -61,7 +61,7 @@
   shell: "snap install {{ item }} --classic"
   with_items:
           #- conjure-up
-    - chromium
+          #- chromium
     - hub
 
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.

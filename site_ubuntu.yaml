@@ -1,14 +1,14 @@
 - hosts: localhost
   connection: local
   roles:
-    - apt
-    - common
-    - git
-    - go
-    - docker
-    - vim
-    - shell
+    #- apt
+    #- common
+    #- nodejs
+    #- git
+    #- go
+    #- docker
+    #- vim
+    #- shell
+    #- font
     - vscode
-    - terminal
-    - i3
-    - font
+    - nim
