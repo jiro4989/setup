@@ -8,10 +8,10 @@
 - name: Make global install directory
   shell: "npm config set prefix '~/.npm-global'"
 
-  #- name: Install Bash language server
-  #  npm:
-  #    name:
-  #      - bash-language-server
-  #      - vscode-css-languageserver-bin
-  #    global: yes
+- name: Install Bash language server
+ npm:
+   name:
+     - bash-language-server
+     - vscode-css-languageserver-bin
+   global: yes
 
