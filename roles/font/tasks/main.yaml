@@ -13,13 +13,23 @@
     dest: "/tmp"
     remote_src: yes
 
+- name: Mkdir font directory
+  become: true
+  file:
+    path: /usr/share/fonts/truetype/hack-gen
+    state: directory
+    recurse: true
+    mode: 0755
+    owner: root
+    group: root
+
 - name: Copy font files
   become: true
   copy:
     src: "{{ item }}"
-    dest: "/usr/share/fonts/TTF/"
+    dest: "/usr/share/fonts/truetype/hack-gen/"
   with_fileglob:
-    - "/tmp/HackGen_{{ hackgen_version }}/*.ttf"
+    - "/tmp/HackGen*.ttf"
 
 - name: Update font cache
   shell: "fc-cache -f -v"
