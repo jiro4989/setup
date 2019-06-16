@@ -10,7 +10,10 @@
 
 - name: Install Bash language server
   npm:
-    name:
-      - bash-language-server
-      - vscode-css-languageserver-bin
-    global: yes
+    name: bash-language-server
+    global: true
+
+- name: Install CSS language server
+  npm:
+    name: vscode-css-languageserver-bin
+    global: true
