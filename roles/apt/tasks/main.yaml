@@ -38,6 +38,7 @@
       - g++
       - tmux
       - docker
+      - docker.io
       - docker-compose
     update_cache: yes
     state: latest
