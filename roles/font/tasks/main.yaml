@@ -31,5 +31,11 @@
   with_fileglob:
     - "/tmp/HackGen*.ttf"
 
+- name: Get noto emoji font
+  become: true
+  git:
+    repo: "https://github.com/googlefonts/noto-emoji"
+    dest: "/usr/local/src/noto-emoji"
+
 - name: Update font cache
   shell: "fc-cache -f -v"
