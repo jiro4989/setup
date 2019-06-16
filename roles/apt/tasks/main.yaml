@@ -37,5 +37,7 @@
       - chromium-browser-l10n
       - g++
       - tmux
+      - docker
+      - docker-compose
     update_cache: yes
     state: latest
