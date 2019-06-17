@@ -23,6 +23,7 @@
       - ruby
       - gem
       - krita
+      - krita-l10n
       - kazam
       - steam
       - tig
