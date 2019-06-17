@@ -42,6 +42,10 @@
     - "github.com/ChimeraCoder/gojson/gojson"
     - "golang.org/x/tools/cmd/gopls"
     - "github.com/mattn/twty"
+    - "github.com/greymd/ojichat"
+    - "github.com/jiro4989/textimg"
+    - "github.com/xztaityozx/owari"
+    - "github.com/jiro4989/align"
 
 - name: ghq get jiro4989 repositories
   shell: "{{ GOPATH }}/bin/ghq get jiro4989/{{ item }}"
