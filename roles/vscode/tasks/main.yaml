@@ -7,6 +7,12 @@
 #     - code
 #     - ruby
 
+- name: Link user settings.json
+  file:
+    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/code/settings.json"
+    dest:  "{{ lookup('env', 'HOME') }}/.config/Code/User/settings.json"
+    state: link
+
 ############################################################
 # Install extensions
 ############################################################
