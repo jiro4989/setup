@@ -40,5 +40,6 @@
       - docker
       - docker.io
       - docker-compose
+      - winehq-stable
     update_cache: yes
     state: latest
