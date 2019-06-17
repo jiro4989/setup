@@ -42,5 +42,6 @@
       - docker.io
       - docker-compose
       - winehq-stable
+      - guake
     update_cache: yes
     state: latest
