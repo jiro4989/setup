@@ -70,7 +70,7 @@
   shell: "snap install {{ item }}"
   with_items:
           #- pulseaudio
-    - foobar2000
+    - discord
 
 - name: Upgrade pip
   become: true
