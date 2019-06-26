@@ -8,7 +8,6 @@
       - systemd
       - mysql-workbench
       - curl
-      - terminator
       - fcitx
       - fcitx-mozc
       - fcitx-config-common
@@ -29,7 +28,6 @@
       - kazam
       - steam
       - tig
-      - rxvt-unicode
       - i3
       - volumeicon-alsa
       - xclip
