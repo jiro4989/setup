@@ -64,13 +64,13 @@
           #- chromium
     - hub
 
-# TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
-- name: Install foobar2000 (need too long time)
-  become: true
-  shell: "snap install {{ item }}"
-  with_items:
-          #- pulseaudio
-    - discord
+# # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
+# - name: Install foobar2000 (need too long time)
+#   become: true
+#   shell: "snap install {{ item }}"
+#   with_items:
+#     - pulseaudio
+#     - discord
 
 - name: Upgrade pip
   become: true
