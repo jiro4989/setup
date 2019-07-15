@@ -43,5 +43,6 @@
       - docker-compose
       - winehq-stable
       - guake
+      - ffmpeg
     update_cache: yes
     state: latest
