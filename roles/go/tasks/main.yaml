@@ -56,4 +56,5 @@
     - "text-proofreading"
     - "textimg"
     - "super_unko"
+    - "scripts"
   ignore_errors: true
