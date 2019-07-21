@@ -1,28 +1,15 @@
 ---
 
-- name: Mkdir download directory
-  become: true
+- name: Setup go 1.12
+  shell: "go get golang.org/dl/go1.12"
+
+- name: Download go1.12
+  shell: "go1.12 download"
+
+- name: Link go
   file:
-    path: "{{ work_dir }}"
-    state: directory
-
-- name: Download go source
-  become: true
-  get_url:
-    url: "{{ download_url }}"
-    dest: "{{ archive_file }}"
-
-- name: Unarchive go source
-  become: true
-  unarchive:
-    src: "{{ archive_file }}"
-    dest: "{{ work_dir }}"
-
-- name: Put go command
-  become: true
-  file:
-    src: "{{ source_dir }}/bin/go"
-    dest: "{{ base_dir }}/bin/go"
+    src: "{{ lookup('env', 'HOME') }}/bin/go1.12"
+    dest: "{{ lookup('env', 'HOME') }}/bin/go"
     state: link
 
 - name: Install golang modules
