@@ -44,5 +44,6 @@
       - winehq-stable
       - guake
       - ffmpeg
+      - openjdk-11-jdk
     update_cache: yes
     state: latest
