@@ -9,7 +9,7 @@
 
 - name: Link user settings.json
   file:
-    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/code/settings.json"
+    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/code/user/settings.json"
     dest:  "{{ lookup('env', 'HOME') }}/.config/Code/User/settings.json"
     state: link
 
