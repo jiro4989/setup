@@ -94,7 +94,7 @@ setup_ubuntu() {
   fi
 
   # Ansible playbookの実行
-  ansible-playbook site_ubuntu.yaml -K
+  ansible-playbook site_ubuntu.yaml
 
   info "${OS}の環境構築を正常に完了しました。"
 }
