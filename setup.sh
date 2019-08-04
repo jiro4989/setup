@@ -7,7 +7,7 @@ readonly SCRIPT_NAME=$(basename $0)
 main() {
   local os=$(tr '[:upper:]' '[:lower:]' <<< $1)
   shift
-  case $ot in
+  case $os in
     ubuntu)
       readonly OS=Ubuntu
       setup_ubuntu $@
