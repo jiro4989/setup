@@ -70,8 +70,8 @@ EOS
 
 setup_ubuntu() {
   set_opts $@
-  local print_help
-  local skip_deps
+  local print_help=$print_help
+  local skip_deps=$skip_deps
 
   if [ "$print_help" = true ]; then
     usage_ubuntu
@@ -101,8 +101,8 @@ setup_ubuntu() {
 
 setup_centos() {
   set_opts $@
-  local print_help
-  local skip_deps
+  local print_help=$print_help
+  local skip_deps=$skip_deps
 
   info "${OS}の環境構築を開始します。"
   info "${OS}の環境構築を正常に完了しました。"
@@ -110,8 +110,8 @@ setup_centos() {
 
 setup_manjaro() {
   set_opts $@
-  local print_help
-  local skip_deps
+  local print_help=$print_help
+  local skip_deps=$skip_deps
 
   info "${OS}の環境構築を開始します。"
   info "${OS}の環境構築を正常に完了しました。"
