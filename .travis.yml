@@ -1,0 +1,12 @@
+language: bash
+
+services:
+  - docker
+
+env:
+  - OS=ubuntu
+
+script:
+  - ./setup.sh help
+  - ./setup.sh $OS -h
+  - (cd dockerfiles/$OS && docker build --no-cache .)
