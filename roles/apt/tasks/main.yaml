@@ -35,7 +35,7 @@
       - krita
       - krita-l10n
       - kazam
-      - steam
+        #- steam
       - tig
       - i3
       - volumeicon-alsa
