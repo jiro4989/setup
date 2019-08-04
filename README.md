@@ -1,5 +1,7 @@
 # setup
 
+[![Build Status](https://travis-ci.org/jiro4989/setup.svg?branch=master)](https://travis-ci.org/jiro4989/setup)
+
 環境構築用のAnsible-Playbook
 
 ## 前提条件
