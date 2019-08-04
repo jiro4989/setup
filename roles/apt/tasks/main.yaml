@@ -5,7 +5,6 @@
     name:
       - snapd
       - systemd
-      - mysql-workbench
       - curl
       - fcitx
       - fcitx-mozc
