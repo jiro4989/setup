@@ -1,10 +1,19 @@
 ---
 
+- name: Add apt repositories of official
+  apt_repository:
+    repo: "{{item}}"
+  with_items:
+    -  main
+    -  universe
+    -  multiverse
+
 - name: Install apt packages
   apt:
     name:
       - snapd
       - systemd
+      - mysql-workbench
       - curl
       - fcitx
       - fcitx-mozc
