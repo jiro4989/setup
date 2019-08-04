@@ -82,7 +82,7 @@ setup_ubuntu() {
 
   if [ "$skip_deps" = false ]; then
     # リポジトリの最新科
-    sudo apt-get update
+    sudo apt-get update -y
 
     # Ansibleのインストール
     sudo apt-get install software-properties-common
@@ -90,7 +90,7 @@ setup_ubuntu() {
     sudo apt-get install ansible -y
 
     # インストール済みパッケージの更新
-    sudo apt-get upgrade
+    sudo apt-get upgrade -y
   fi
 
   # Ansible playbookの実行
