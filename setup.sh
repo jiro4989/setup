@@ -85,7 +85,7 @@ setup_ubuntu() {
     sudo apt-get update -y
 
     # Ansibleのインストール
-    sudo apt-get install software-properties-common
+    sudo apt-get install -y software-properties-common
     sudo add-apt-repository --yes ppa:ansible/ansible-2.7
     sudo apt-get install ansible -y
 
