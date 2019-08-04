@@ -28,13 +28,18 @@
 #     - picture
 #     - video
 
+- name: Create user
+  user:
+    name: "{{usergroup.user.name}}"
+    group: "{{usergroup.user.group}}"
+
 - name: Make config directory
+  become_user: "{{usergroup.user.name}}"
   file:
     path: "{{ lookup('env', 'HOME') }}/.config"
     state: directory
 
 - name: Install minikube
-  become: true
   get_url:
     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     dest: /usr/local/bin/minikube
@@ -43,7 +48,6 @@
     group: root
 
 - name: Starting snapd
-  become: true
   systemd:
     name: snapd
     state: started

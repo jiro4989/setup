@@ -1,5 +1,7 @@
 - hosts: localhost
   connection: local
+  vars_files:
+    - ./vars/usergroup.yaml
   roles:
     - apt
     - common
