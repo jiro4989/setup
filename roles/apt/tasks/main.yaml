@@ -54,5 +54,6 @@
       - guake
       - ffmpeg
       - openjdk-11-jdk
+      - xsel
     update_cache: yes
     state: latest
