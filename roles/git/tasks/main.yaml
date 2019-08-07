@@ -19,3 +19,5 @@
       value: "~/src/github.com/jiro4989/dotfiles/git/commit.template"
     - name: ghq.root
       value: "~/src"
+    - name: pull.ff
+      value: "only"
