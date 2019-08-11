@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM archlinux
 
 RUN pacman -S --noconfirm git
 RUN git clone https://github.com/jiro4989/setup 
