@@ -31,3 +31,10 @@
 - name: Change shell to zsh
   become: true
   shell: "chsh -s /usr/bin/zsh"
+
+- name: Create tmux.conf link
+  file:
+    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/tmux.conf"
+    dest:  "{{ lookup('env', 'HOME') }}/.tmux.conf"
+    state: link
+

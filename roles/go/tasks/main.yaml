@@ -1,15 +1,15 @@
 ---
 
 - name: Setup go 1.12
-  shell: "go get golang.org/dl/go1.12"
+  shell: "GOPATH={{ GOPATH }} go get golang.org/dl/go1.12"
 
 - name: Download go1.12
-  shell: "go1.12 download"
+  shell: "GOPATH={{ GOPATH }} {{ GOPATH }}/bin/go1.12 download"
 
 - name: Link go
   file:
-    src: "{{ lookup('env', 'HOME') }}/bin/go1.12"
-    dest: "{{ lookup('env', 'HOME') }}/bin/go"
+    src: "{{ GOPATH }}/bin/go1.12"
+    dest: "{{ GOPATH }}/bin/go"
     state: link
 
 - name: Install golang modules

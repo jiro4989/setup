@@ -7,6 +7,12 @@
 #     - code
 #     - ruby
 
+- name: Make config directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.config/Code/User/"
+    state: directory
+    recurse: true
+
 - name: Link user settings.json
   file:
     src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/code/user/settings.json"

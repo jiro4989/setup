@@ -28,36 +28,37 @@
 #     - picture
 #     - video
 
-- name: Create user
-  user:
-    name: "{{usergroup.user.name}}"
-    group: "{{usergroup.user.group}}"
+# - name: Create user
+#   user:
+#     name: "{{ usergroup.user.name }}"
+#     group: "{{ usergroup.user.group }}"
 
 - name: Make config directory
-  become_user: "{{usergroup.user.name}}"
+  #become_user: "{{usergroup.user.name}}"
   file:
     path: "{{ lookup('env', 'HOME') }}/.config"
     state: directory
 
-- name: Install minikube
-  get_url:
-    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-    dest: /usr/local/bin/minikube
-    mode: 0755
-    owner: root
-    group: root
+# - name: Install minikube
+#   get_url:
+#     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+#     dest: /usr/local/bin/minikube
+#     mode: 0755
+#     owner: root
+#     group: root
+
+- name: Create /snap link
+  become: true
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
 
 - name: Starting snapd
+  become: true
   systemd:
     name: snapd
     state: started
-
-    # - name: Create /snap link
-    #   become: true
-    #   file:
-    #     src: /var/lib/snapd/snap
-    #     dest: /snap
-    #     state: link
 
 # TODO: if ansible version is over 2.8 then change module 'shell' to 'snap'.
 - name: Install snap packages (need too long time)
@@ -144,10 +145,4 @@
       export QT_IM_MODULE=ibus
       export XMODIFIERS="@im=ibus"
       ibus-daemon -drx
-
-- name: Create tmux.conf link
-  file:
-    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/tmux.conf"
-    dest:  "{{ lookup('env', 'HOME') }}/.tmux.conf"
-    state: link
 
