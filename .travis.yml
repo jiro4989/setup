@@ -5,6 +5,7 @@ services:
 
 env:
   - OS=ubuntu
+  - OS=manjaro
 
 script:
   - ./setup.sh help
