@@ -103,7 +103,7 @@ setup_manjaro() {
   if [ "$skip_deps" = false ]; then
     # ミラーサイトの最適化
     # 参考: https://z1000s.hatenablog.com/entry/2017/11/16/223557
-    pacman-mirrors -f 0
+    type pacman-mirrors >& /dev/null && pacman-mirrors -f 0
 
     # -S はリポジトリの動機
     # apt update と同様の処理
