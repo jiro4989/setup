@@ -138,3 +138,11 @@ urxvtのフォントが変更されなかった。
 Boldフォントの方だけ反映されるという問題に直面した。
 
 結論：$HOME/.Xresource内のフォント設定をコメントアウトしてOSを再起動したら解決した。
+
+## 日本語のディレクトリを英語に
+
+以下のコマンド
+
+```bash
+LANGUAGE=en xdg-user-dirs-update --force
+```
