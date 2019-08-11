@@ -2,7 +2,10 @@
 
 [![Build Status](https://travis-ci.org/jiro4989/setup.svg?branch=master)](https://travis-ci.org/jiro4989/setup)
 
-環境構築用のAnsible-Playbook
+環境構築用のAnsible-Playbook。
+
+やることの詳細は[ManjaroLinux + i3の環境構築をするときにやること](https://scrapbox.io/jiro4989/ManjaroLinux_+_i3%E3%81%AE%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E3%82%92%E3%81%99%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AB%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8)
+にまとめている。
 
 ## 前提条件
 
@@ -27,87 +30,19 @@ Ansible version
 以下のコマンドを実行する
 
 ```
-./setup.sh
+sudo ./setup.sh manjaro
 ```
 
 AnsiblePlaybookのみ実行したい場合は下記
 
 ```
-./setup.sh p
+sudo ./setup.sh manjaro -s
 ```
-
-## OSの再インストール
-
-不定期にOSを再インストールするときにやること。
-
-### USBにOSイメージを焼く
-
-USBにOSイメージを焼くためにUSBのデバイス名を調べる。
-
-```bash
-sudo fdisk -l | grep /dev/sd
-```
-
-USBを初期化するときは以下のコマンド(結構時間がかかる)
-
-```bash
-sudo dd if=/dev/zero of=/dev/{デバイス名} bs=16MB
-
-# sdbの時
-sudo dd if=/dev/zero of=/dev/sdb bs=16MB
-```
-
-USBにISOをやく(結構時間がかかる)
-
-```bash
-sudo dd if={ISOファイル名}.iso of=/dev/{デバイス名} bs=16MB
-
-# sdbのとき
-sudo dd if={ISOファイル名}.iso of=/dev/sdb bs=16MB
-```
-
-# 外部モニター設定
-
-xrandrかarandrを使う。
-
-- xrandr コマンドでディスプレイを操作する
-- arandr GUIでディスプレイを操作する
 
 # ファイルマネージャー
 
 ManjaroLinuxにはpcmanfmがインストールされているのでそれを使う。
 i3wmではmod+F3で呼び出せる。
-
-# Bluetooth USB
-
-Playbookで自動でBluetoothマウスと接続するようにしたはずだけれど、
-一応手動でのオペレーションをする場合は以下の手順を踏む。
-
-```
-bluetoothctl
-power on
-devices
-scan on
-connect {MAC}
-```
-
-http://note.kurodigi.com/post-0-12/
-
-# Vimのプラグインのインストール
-
-vimを起動して以下のコマンドを実行する。
-
-- `:PlugInstall`
-- `:GoInstallBinaries`
-
-# zshのセットアップ
-
-zshを実行して yes yes
-
-# Chromiumで音が出ない
-
-pacmanタスクでpulseaudioとpavucontrolをインストールするようにしている。
-setup後に`pavucontrol`コマンドを実行して音声出力をいじると音がなるようになった。
 
 # フォント名を調べる
 
@@ -139,10 +74,3 @@ Boldフォントの方だけ反映されるという問題に直面した。
 
 結論：$HOME/.Xresource内のフォント設定をコメントアウトしてOSを再起動したら解決した。
 
-## 日本語のディレクトリを英語に
-
-以下のコマンド
-
-```bash
-LANGUAGE=en xdg-user-dirs-update --force
-```
