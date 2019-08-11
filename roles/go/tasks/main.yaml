@@ -47,15 +47,17 @@
     - "textimg"
     - "super_unko"
     - "scripts"
-  ignore_errors: true
 
 - name: ghq get other repositories
   shell: "{{ GOPATH }}/bin/ghq get {{ item }}"
   with_items:
     - "tj/git-extras"
-  ignore_errors: true
+    - "unkontributors/super_unko"
 
 - name: git-extras install
   become: true
   shell: "{{ GOPATH }}/src/github.com/tj/git-extras/install.sh"
-  ignore_errors: true
+
+- name: Install super_unko
+  become: true
+  shell: "{{ GOPATH }}/src/github.com/unkontributors/super_unko/install.sh"
