@@ -36,6 +36,7 @@
     name:
       - zsh
       - tmux
+      - shellcheck
     update_cache: yes
     state: latest
 
