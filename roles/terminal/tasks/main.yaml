@@ -2,12 +2,11 @@
 
 - name: Create link of urxvt config file
   file:
-    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/urxvt/Xdefaults"
-    dest: "{{ lookup('env', 'HOME') }}/.Xdefaults"
-    state: link
+    path: "{{ lookup('env', 'HOME') }}/.config/termite"
+    state: directory
 
-- name: Set terminal font
-  replace:
-    dest: "{{ lookup('env', 'HOME') }}/.Xresources"
-    regexp: "^URxvt.font:.*9x15.*$"
-    replace: "URxvt.font:     xft:HackGen Console:pixelsize=15:antialias=true,xft:Noto Color Emoji:pixelsize=16:antialias=true"
+- name: Create link of urxvt config file
+  file:
+    src: "{{ lookup('env', 'HOME') }}/src/github.com/jiro4989/dotfiles/termite/config"
+    dest: "{{ lookup('env', 'HOME') }}/.config/termite/config"
+    state: link
