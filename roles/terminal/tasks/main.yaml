@@ -10,4 +10,4 @@
   replace:
     dest: "{{ lookup('env', 'HOME') }}/.Xresources"
     regexp: "^URxvt.font:.*9x15.*$"
-    replace: "URxvt.font:     xft:HackGen Console:pixelsize=17:antialias=true,xft:Noto Color Emoji:pixelsize=16:antialias=true"
+    replace: "URxvt.font:     xft:HackGen Console:pixelsize=15:antialias=true,xft:Noto Color Emoji:pixelsize=16:antialias=true"
