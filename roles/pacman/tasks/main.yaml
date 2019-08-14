@@ -37,6 +37,7 @@
       - zsh
       - tmux
       - shellcheck
+      - termite
     update_cache: yes
     state: latest
 
