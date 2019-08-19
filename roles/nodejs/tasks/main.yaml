@@ -17,3 +17,14 @@
   npm:
     name: vscode-css-languageserver-bin
     global: true
+
+- name: Install TypeScript
+  npm:
+    name: typescript
+    global: true
+
+- name: Install TypeScript language server
+  npm:
+    name: typescript-language-server
+    global: true
+
