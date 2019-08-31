@@ -4,6 +4,8 @@
 
 環境構築用のAnsible-Playbook。
 
+[dotfiles](https://github.com/jiro4989/dotfiles)に統合したのでこちらは更新しない。
+
 やることの詳細は[ManjaroLinux + i3の環境構築をするときにやること](https://scrapbox.io/jiro4989/ManjaroLinux_+_i3%E3%81%AE%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E3%82%92%E3%81%99%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AB%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8)
 にまとめている。
 
